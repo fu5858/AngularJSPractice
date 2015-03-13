@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+<title>Notes App</title>
+<script src="../../js/angular.min.js"></script>
+<script type="text/javascript">
+angular.module('notesApp', [])
+	   .controller('MainCtrl', [function() {
+			this.helloMsg = 'Hello ';
+			var goodbyeMsg = 'Goodbye ';
+		}]);
+</script>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+{{ctrl.helloMsg}} AngularJS.
+<br/>
+<!-- 
+	This message will just show 'AngluralJS' without Goodbye message,
+	Because it is not a local instance variable, it is just inner variables.
+ -->
+{{ctrl.goodbyeMsg}} AngularJS
+</body>
+</html>
