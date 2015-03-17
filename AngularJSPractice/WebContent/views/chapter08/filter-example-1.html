@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AngularJS Practice</title>
+<script src="../../js/angular.min.js"></script>
+<script type="text/javascript">
+	angular.module('filterApp', [])
+		.controller('FilterCtrl', [function(){
+			var self = this;
+			
+			self.amount = 1024;
+			self.totalCost = 4906;
+			self.name = 'Shyam Seahadri';
+			self.startTime = new Date().getTime();
+		}]);
+</script>
+</head>
+<body ng-app="filterApp">
+
+	<div ng-controller="FilterCtrl as ctrl">
+		<div>
+			Amount as a number: {{ctrl.amount | number}}
+		</div>
+		<div>
+			Total Cost as a currency: {{ctrl.totalCost | currency}}
+		</div>
+		<div>
+			Total Cost in INR: {{ctrl.totalCost | currency:'INR '}}
+		</div>
+		<div>
+			Shouting the name: {{ctrl.name | uppercase}}
+		</div>
+		<div>
+			Whispering the name: {{ctrl.name | lowercase}}
+		</div>
+		<div>
+			Start Time: {{ctrl.startTime | date:'medium'}}
+		</div>
+	</div>
+</body>
+</html>
