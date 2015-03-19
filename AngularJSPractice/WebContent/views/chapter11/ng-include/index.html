@@ -1,0 +1,18 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>AngularJS Practice</title>
+<script src="../../../js/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-app="stockApp">
+	<div ng-controller="MainCtrl as mainCtrl">
+		<h3>List of Stocks</h3>
+		<div ng-repeat="stock in mainCtrl.stocks">
+			<div ng-include="mainCtrl.stockTemplate" src=""></div>
+		</div>
+	</div>
+
+</body>
+</html>
